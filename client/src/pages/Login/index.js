@@ -61,7 +61,7 @@ const Login = () => {
           setMessage("Signed in successfully");
           setTimeout(() => {
             setMessage("");
-            navigate("/");
+            navigate("/dashboard");
             window.location.reload();
           }, 2000); // Display success message for 2 seconds
         },

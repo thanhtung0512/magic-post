@@ -1,0 +1,68 @@
+.container{
+    display: flex;
+    width: 100%;
+    height: 270px;
+    background-color: black;
+    justify-content: center;
+    padding: 20px;
+}
+
+.content{
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    color: white;
+}
+.contentLeft{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+.bold{
+    font-weight: 600;
+    font-size: 13px;
+}
+.contentRight{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    flex: 1;
+    font-size: 13px;
+    gap: 5px;
+}
+.contentRight div{
+    display: flex;
+    flex-direction: column;
+}
+.company {
+    display: flex;
+    gap: 5px;
+    height: 40px;
+    
+}
+.company span{
+    display: flex;
+    text-transform: uppercase;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 800;
+    align-items: center;
+}
+.ul1{
+    display: flex;
+    gap: 8px;
+}
+.ul1 p{
+    font-size: 13px;
+}
+.ul1 p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.Icons{
+    display: flex;
+    gap: 8px;
+}

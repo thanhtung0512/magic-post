@@ -1,11 +1,10 @@
-// MainLayout.js
 import React, { useState } from "react";
+import style from "./MainLayout.module.css";
 import { Flex } from "@chakra-ui/react";
-// import HeaderBar from "../Components/HeaderBar";
-import { Header, Content } from "../Components";
-import SideBarWithContent from "../Components/SideBarWithContent";
-import AuthService from "../services/auth.service";
+import AuthService from "../../services/auth.service";
+import { Header, Content, Footer } from "../../Components";
 import { useNavigate } from "react-router-dom";
+
 const MainLayout = () => {
   const navigate = useNavigate();
   const currentUserr = AuthService.getCurrentUser();
@@ -25,7 +24,13 @@ const MainLayout = () => {
     <>
       <Header role={role} userName={userName} onLogout={handleLogout} />
       {/* <SideBarWithContent /> */}
-      <Content/>
+      <div className={style.content}>
+        <Content />
+      </div>
+
+      <div className={style.footer}>
+        <Footer />
+      </div>
     </>
   );
 };

@@ -17,4 +17,8 @@ public class Teller {
     @ManyToOne
     @JoinColumn(name = "transactionPointId")
     private TransactionPoint transactionPoint;
+
+    @OneToOne
+    @JoinColumn(name="userId")
+    private User user;
 }

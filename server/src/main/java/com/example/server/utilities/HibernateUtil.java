@@ -17,9 +17,10 @@ import com.example.server.domain.Teller;
 import com.example.server.domain.TransactionPoint;
 import com.example.server.domain.TransactionPointGatheringPoint;
 import com.example.server.domain.User;
-
+import org.springframework.stereotype.Component;
 import jakarta.transaction.Transaction;
 
+@Component
 public class HibernateUtil {
 
     private static String currentDB = "bblipzsuaomfkih4bdzx";

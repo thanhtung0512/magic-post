@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Data
-@Table(name="Customer")
+@Table(name = "Customer")
 public class Customer {
 
     @Id
@@ -15,9 +15,15 @@ public class Customer {
     private Long customerId;
 
     @OneToOne
-    @JoinColumn(name="userId")
+    @JoinColumn(name = "userId")
     private User user;
 
     @Column(name = "CustomerName")
     private String customerName;
+
+    @Column(name = "Address")
+    private String address;
+
+    @Column(name = "PhoneNumber")
+    private String phoneNumber;
 }

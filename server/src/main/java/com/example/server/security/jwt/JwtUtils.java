@@ -38,7 +38,7 @@ public class JwtUtils {
       return cookie.getValue();
     } else {
       return null;
-    }
+    } 
   }
 
   public ResponseCookie generateJwtCookie(UserDetailsImpl userPrincipal) {

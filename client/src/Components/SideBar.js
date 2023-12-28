@@ -154,7 +154,7 @@ const getSidebarItems = (userRole) => {
       return [
         { to: "/dashboard", label: "Dashboard" },
         { to: "/manage-points", label: "Manage Points" },
-        { to: "/manage-account-managers", label: "Manage Account Managers" },
+        { to: "/manage-account-managers", label: "Manage Account" },
         { to: "/view-statistics", label: "View Statistics" },
         { to: "/profile", label: "Profile" },
       ];

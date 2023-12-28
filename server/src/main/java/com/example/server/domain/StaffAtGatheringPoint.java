@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Data
-@Table(name ="StaffAtGatheringPoint")
+@Table(name = "StaffAtGatheringPoint")
 public class StaffAtGatheringPoint {
 
     @Id
@@ -17,4 +17,14 @@ public class StaffAtGatheringPoint {
     @ManyToOne
     @JoinColumn(name = "gatheringPointId")
     private GatheringPoint gatheringPoint;
+
+    @OneToOne
+    @JoinColumn(name = "userId")
+    private User user;
+
+    @Column(name = "Name")
+    private String name;
+
+    @Column(name = "PhoneNumber")
+    private String phoneNumber;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Flex,
@@ -58,9 +58,51 @@ const generateRandomPercentageChange = () => {
 };
 
 const DashboardPage = () => {
+
+  const [data, setData] = useState([]);
+  
+
+  useEffect(() => {
+    // Fetch data from the API when the component mounts
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/delivery-orders",
+          {
+            method: "GET",
+            credentials: "include",
+            headers: { "Access-Control-Allow-Origin": "*" },
+            // other options...
+          }
+        );
+        const jsonData = await response.json();
+        setData(jsonData);
+        console.log("Data from API:", jsonData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+ 
+
   return (
     <Box width='100%' paddingTop={2} >
       <Flex justify="space-between" mb={9}>
+        
+        <CustomStat
+          label="Total Orders"
+          value="128"
+          imageLink="/assests/images/totalOrder.png"
+        />
+
+        <CustomStat
+          label="Total Delivered"
+          value="112"
+          imageLink="/assests/images/totalDelivered.png"
+        />
         <CustomStat
           label="Total Orders"
           value="128"
@@ -73,15 +115,23 @@ const DashboardPage = () => {
         />
 
         <CustomStat
+         
           label="Total Cancelled"
+         
           value="10"
+         
           imageLink="/assests/images/totalCancel.png"
+       
         />
 
         <CustomStat
+         
           label="Total Revenue"
+         
           value="$4,233"
+         
           imageLink="/assests/images/totalRevenue.png"
+        
         />
       </Flex>
 

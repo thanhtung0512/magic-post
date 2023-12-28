@@ -10,6 +10,7 @@ const SideBarWithContent = () => {
   const handleNavItemClick = (navItem, isSideBarOpen) => {
     setActiveNavItem(navItem);
     setIsSideBarOpen(isSideBarOpen);
+    
   };
 
   return (

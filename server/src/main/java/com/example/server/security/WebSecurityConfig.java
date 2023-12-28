@@ -60,11 +60,16 @@ public class WebSecurityConfig {
         .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authorizeHttpRequests(auth -> auth.requestMatchers("/api/auth/**").permitAll()
+            .requestMatchers("/api/delivery-orders").permitAll()
+            .requestMatchers("/api/transaction-points").permitAll()
+            .requestMatchers("/api/gathering-points").permitAll()
             .requestMatchers("/api/test/**").permitAll()
+            .requestMatchers("/api/point-leaders").permitAll()
+            .requestMatchers("/api/point-leaders/**").permitAll()
+            .requestMatchers("/api/users/**").permitAll()
             .anyRequest().authenticated());
 
     http.authenticationProvider(authenticationProvider());
-
     http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
     return http.build();

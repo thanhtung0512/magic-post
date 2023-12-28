@@ -28,7 +28,7 @@ const CustomStat = ({ label, value, imageLink }) => {
       boxShadow="xl"
       bg="white"
       width="50%"
-      height={150}
+      height={170}
     >
       <StatLabel fontSize="xl" fontWeight="bold" color="black">
         {label}

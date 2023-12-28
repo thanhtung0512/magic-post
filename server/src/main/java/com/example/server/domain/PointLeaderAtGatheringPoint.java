@@ -7,15 +7,25 @@ import jakarta.persistence.*;
 @Entity
 @Data
 @Table(name = "PointLeaderAtGatheringPoint")
-public class PointLeaderAtGatheringPoint {
+public class PointLeaderAtGatheringPoint extends PointLeader {
 
     @Id
-    @ManyToOne
-    @JoinColumn(name = "leaderId")
-    private CompanyLeader companyLeader;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "LeaderID")
+    private Long pointLeaderId;
 
-    @Id
-    @ManyToOne
+ 
+    @OneToOne
     @JoinColumn(name = "gatheringPointId")
     private GatheringPoint gatheringPoint;
+
+    @OneToOne
+    @JoinColumn(name = "userId")
+    private User user;
+
+    @Column(name = "Name")
+    private String name;
+
+    @Column(name = "PhoneNumber")
+    private String phoneNumber;
 }
