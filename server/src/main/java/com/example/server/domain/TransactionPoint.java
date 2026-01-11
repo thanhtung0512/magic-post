@@ -21,4 +21,10 @@ public class TransactionPoint {
     private String address;
 
     // Getters and setters
+    @Column(name = "Latitude")
+    private double latitude;
+    // Getters and setters
+
+    @Column(name = "Longitude")
+    private double longitude;
 }

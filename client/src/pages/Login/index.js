@@ -61,7 +61,7 @@ const Login = () => {
           setMessage("Signed in successfully");
           setTimeout(() => {
             setMessage("");
-            navigate("/");
+            navigate("/dashboard");
             window.location.reload();
           }, 2000); // Display success message for 2 seconds
         },
@@ -83,69 +83,6 @@ const Login = () => {
   };
 
   return (
-    // <div className={style.container}>
-    //   <div className={style.logo}>
-    //     <img
-    //       src="Screenshot_2023-11-15_143213-removebg-preview.png"
-    //       width="200"
-    //       height="200"
-    //     ></img>
-    //     <div className={style.CompanyName}>Magic Post</div>
-    //   </div>
-    //   <h2 className={style.title}>Đăng Nhập</h2>
-    //   <Form className={style.form} ref={form} onSubmit={handleLogin} >
-    //     <div className={style.group}>
-    //       <label htmlFor="account">Tên tài khoản</label>
-    //       <input
-    //         id="account"
-    //         type="text"
-    //         name="username"
-    //         value={username}
-    //         onChange={onChangeUsername}
-    //         validations={[required]}
-    //       />
-    //     </div>
-    //     <div className={style.group}>
-    //       <label htmlFor="password">Mật Khẩu</label>
-    //       <input
-    //         id="password"
-    //         type="password"
-    //         name="password"
-    //         value={password}
-    //         onChange={onChangePassword}
-    //         validations={[required]}
-    //       />
-    //     </div>
-    //     <div className={style.group}>
-    //       <button ref={checkBtn} disabled={loading}>
-    //         {loading ? (
-    //           <>
-    //             Signing you in... <Spinner size="sm" ml={2} />
-    //           </>
-    //         ) : (
-    //           "Đăng nhập"
-    //         )}
-    //       </button>
-    //       {message && (
-    //         <Flex justifyContent="center" alignItems="center" mt={2}>
-    //           <Text color="teal" fontSize="md">
-    //             {message}
-    //           </Text>
-    //         </Flex>
-    //       )}
-
-    //       {/* <CheckButton style={{ display: "none" }} ref={checkBtn} /> */}
-    //     </div>
-    //   </Form>
-    //   <div className={style.redirect}>
-    //     <p>Bạn chưa có tài khoản ?</p>
-    //     <Link to="/register">Tạo Tài khoản</Link>
-    //   </div>
-    //   <div className={style.license}>
-    //     Khi đăng nhập, tôi đồng ý với các Điều khoản sử dụng và Chính sách bảo
-    //     mật của MagicPost.
-    //   </div>
-    // </div>
     <Flex
       direction="column"
       align="center"
@@ -192,7 +129,7 @@ const Login = () => {
         </FormControl>
 
         <Button
-          colorScheme="teal"
+          colorScheme="#01904a"
           type="submit"
           width="full"
           disabled={loading}
@@ -208,7 +145,7 @@ const Login = () => {
 
         {message && (
           <Flex justifyContent="center" alignItems="center" mt={2}>
-            <Text color="teal" fontSize="md">
+            <Text color="#01904a" fontSize="md">
               {message}
             </Text>
           </Flex>
@@ -219,7 +156,7 @@ const Login = () => {
 
       <Box mt={4}>
         Don't have an account?{" "}
-        <ChakraLink color="teal" href="/register">
+        <ChakraLink color="#01904a" href="/register">
           Register here.
         </ChakraLink>
       </Box>

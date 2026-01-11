@@ -32,18 +32,12 @@ const ComplexChart = ({ data }) => {
             strokeWidth={4}
             
           />
+          
           <Line
             type="monotone"
-            dataKey="pending"
-            stroke="#E53E3E"
-            name="Pending"
-            strokeWidth={4}
-          />
-          <Line
-            type="monotone"
-            dataKey="cancelled"
+            dataKey="failed"
             stroke="green"
-            name="Cancelled"
+            name="Failed"
             strokeWidth={4}
           />
         </LineChart>

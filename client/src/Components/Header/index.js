@@ -16,7 +16,7 @@ import AuthService from "../../services/auth.service";
 const theme = extendTheme({
   colors: {
     brand: {
-      500: "teal", // Blue color
+      500: "#01904a", // Blue color
     },
   },
 });
@@ -35,10 +35,18 @@ const Header = ({ role, userName, onLogout }) => {
       boxShadow="md" // Add box shadow for a subtle lift
       className={style.container}
     >
-      <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-        <Text fontSize="xl" fontWeight="bold" _hover={{ color: "teal" }}>
-          MagicPost
-        </Text>
+      <Link
+        to="/dashboard"
+        style={{ textDecoration: "none", color: "inherit" }}
+      >
+        <div className={style.company}>
+          <img
+            src="assests/images/Screenshot_2023-11-15_143213-removebg-preview.png"
+            width="80px"
+            height="80px"
+          />
+          <span>Magic Post</span>
+        </div>
       </Link>
       <Flex className={style.SearchBar}>
         <SearchBar />
@@ -52,7 +60,7 @@ const Header = ({ role, userName, onLogout }) => {
           rounded="full"
           bg="teal"
           color="white"
-          _hover={{ bg: "#2C5282" }}
+          _hover={{ bg: "#01904a" }}
         >
           Logout
         </Button>

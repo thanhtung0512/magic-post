@@ -25,12 +25,13 @@
 }
 .title {
   font-size: 1.6rem;
+  letter-spacing: 2px;
 }
 .form {
-    width: 100%;
+  width: 100%;
 }
-.subform{
-    display: flex;
+.subform {
+  display: flex;
   flex-direction: column;
   gap: 30px;
   width: 100%;
@@ -38,18 +39,23 @@
 .input {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 .input input {
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid rgb(206, 208, 212);
-  border-radius: 4px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  width: 100%;
+  max-width: var(--form-max-width);
+  height: 45px;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 6px;
 }
-.input label{
-    font-size: 1.6rem;
+.input label {
+  font-size: 1.6rem;
 }
-.group {
+/* .group {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -58,8 +64,8 @@
 }
 .group label {
   font-size: 1.6rem;
-}
-.group input {
+} */
+/* .group input {
   font-size: 1.4rem;
   font-weight: 400;
   width: 100%;
@@ -69,9 +75,9 @@
   outline: none;
   border: 1px solid var(--input-border);
   border-radius: 6px;
-}
+} */
 .form button {
-  background-color: #138d75;
+  background-color: #01904a;
   color: white;
   width: 100%;
   height: 50px;
@@ -104,7 +110,7 @@
   font-size: 14px;
 }
 .redirect a {
-  color: #138d75;
+  color: #01904a;
   text-decoration: none;
 }
 .license {

@@ -44,7 +44,7 @@ const SideBarCT = ({ userRole, activeNavItem, onNavItemClick }) => {
         align="start"
         spacing={3}
         p={4}
-        paddingTop="50px"
+        paddingTop="70px"
         borderRadius="8px"
         bg="teal"
         color="black"
@@ -61,28 +61,27 @@ const SideBarCT = ({ userRole, activeNavItem, onNavItemClick }) => {
           position="absolute"
           bg="teal"
           left={isSidebarOpen ? "0px" : "270px"}
-          top="0px"
+          top="20px"
           width="40px"
           height="40px"
-          fontSize='24px'
-          color='white'
+          fontSize="24px"
+          color="white"
           _hover={{
-            backgroundColor: 'white',
-            border: '3px solid teal',
-            color:'teal'
+            backgroundColor: "white",
+            border: "3px solid teal",
+            color: "teal",
           }}
-        animation='0.3s'
-        transition="left 0.3s ease-in-out"
-
-
+          animation="0.3s"
+          transition="left 0.3s ease-in-out"
         >
           {isSidebarOpen ? "←" : "→"}
           {/* <p className={style.arrow}>{isSidebarOpen ? "←" : "→"}</p> */}
         </Button>
         {sidebarItems.map((item) => (
           <NavItem
+            style={{ textAlign: "left" }}
             key={item.to}
-            top="30px"
+            top="70px"
             to={item.to}
             activeNavItem={activeNavItem}
             onClick={() => onNavItemClick(item.to, isSidebarOpen)}
@@ -116,6 +115,9 @@ const getSidebarItems = (userRole) => {
   const currentRole = currentUser.roles[0];
   console.log(currentRole);
   switch (currentRole) {
+    case "ROLE_TELLER":
+      userRole = "tellerTransaction";
+      break;
     case "ROLE_BOSS":
       userRole = "companyLeader";
       break;
@@ -133,21 +135,29 @@ const getSidebarItems = (userRole) => {
       userRole = "staffGathering";
       break;
   }
+  const currentUserId = currentUser.id;
   switch (userRole) {
     case "companyLeader":
       return [
         { to: "/dashboard", label: "Dashboard" },
-        { to: "/manage-points", label: "Manage Points" },
-        { to: "/manage-account-managers", label: "Manage Account Managers" },
-        { to: "/view-statistics", label: "View Statistics" },
+        { to: "/manage-points", label: "All Points" },
+        { to: "/manage-account-managers", label: "Manage Account" },
+        { to: "/view-statistics", label: "Manage All Orders" },
         { to: "/profile", label: "Profile" },
       ];
     case "pointLeaderTransaction":
       return [
-        { to: "/grant-teller-accounts", label: "Grant Teller Accounts" },
+        {
+          to: "/grant-teller-accounts",
+          label: currentUserId === 1 ? "Grant Staff Accounts" : "Grant Teller Accounts",
+        },
         {
           to: "/transaction-point-statistics",
-          label: "Transaction Point Statistics",
+          label: "Statistics",
+        },
+        {
+          to: "/in-out-orders",
+          label: "In/ Out Orders",
         },
         {
           to: "/profile",
@@ -157,23 +167,13 @@ const getSidebarItems = (userRole) => {
     case "tellerTransaction":
       return [
         { to: "/record-goods", label: "Record Goods" },
-        { to: "/create-delivery-orders", label: "Create Delivery Orders" },
-        {
-          to: "/confirmation-arriving-at-collection",
-          label: "Confirmation at Collection Point",
-        },
-        {
-          to: "/create-orders-recipient",
-          label: "Create Orders for Recipient",
-        },
-        {
-          to: "/confirmation-delivered-recipient",
-          label: "Confirmation of Delivered Goods",
-        },
+        { to: "/create-delivery-orders", label: "Forward/ Ongoing Orders" },
+        { to: "/make-shipping", label: "Make shipping" },
         { to: "/failed-delivery-handling", label: "Failed Delivery Handling" },
+        { to: "/success-handling", label: "Success Orders" },
         {
           to: "/statistics-transferred-rows",
-          label: "Statistics on Transferred Rows",
+          label: "Statistics of tranfered",
         },
         {
           to: "/profile",
@@ -185,7 +185,7 @@ const getSidebarItems = (userRole) => {
         { to: "/manage-employee-accounts", label: "Manage Employee Accounts" },
         {
           to: "/gathering-point-statistics",
-          label: "Gathering Point Statistics",
+          label: "Statistics",
         },
         {
           to: "/profile",
@@ -196,20 +196,13 @@ const getSidebarItems = (userRole) => {
       return [
         {
           to: "/confirmation-from-transaction-point",
-          label: "Confirmation from Transaction Point",
+          label: "Confirm ongoing orders",
         },
         {
           to: "/create-delivery-orders-destination",
-          label: "Create Delivery Orders (Destination)",
+          label: "Forward orders",
         },
-        {
-          to: "/confirmation-orders-received",
-          label: "Confirmation of Orders Received",
-        },
-        {
-          to: "/create-delivery-orders-destination-transaction",
-          label: "Create Delivery Orders (Destination Transaction)",
-        },
+
         {
           to: "/profile",
           label: "Profile",

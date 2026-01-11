@@ -1,0 +1,194 @@
+.container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    border-bottom: 3px solid #01904a;
+    border-radius: 8px;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+}
+.company{
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    flex: 1;
+}
+
+.company span{
+    line-height: 80px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.func{
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    border: 1px solid #01904a;
+    padding: 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.5s;
+    
+
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    background-color: #01904a;
+    color: white;
+    border: 1px solid white;
+    padding: 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.login:hover{
+    background-color: white;
+    color: #01904a;
+    border: 1px solid #01904a;
+    cursor: pointer;
+    scale: 125%;
+    margin: 0px 10px;
+}
+.func:hover{
+    background-color: #01904a;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    scale: 125%;
+    margin: 0px 10px;
+
+}
+
+.contentStart{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content1{
+    display: flex;
+    width: 1000px;
+    height: 639px;
+    flex-direction: row;
+}
+.title1{
+    flex: 1;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.num{
+    font-size: 90px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+.num:hover{
+    color: #01904a;
+    scale: 125%;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+.rig{
+    display: flex;
+    flex-direction: column;
+    font-size: 28px;
+    transition: 0.5s;
+}
+.rig:hover{
+    color: #01904a;
+    scale: 125%;
+    margin-left: 30px;
+    font-weight: 600;
+}
+
+.content2{
+    width: 100%;
+}
+.title{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 200;
+    margin: 7px 0 25px 0;
+}
+.method{
+    width: 100%;
+    background-color: #efefef;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.methodContent{
+    padding: 30px 10px;
+    width: 1000px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 8px;
+    
+}
+.methodfunc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.methodTitle{
+    color: #01904a;
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+.methodscript{
+    font-size: 14px;
+    padding: 0px 5px;
+}
+.footer{
+   position: relative;
+   width: 100%;
+    z-index: 1000;
+}
+.content3{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.customerWrap{
+    width: 1000px;
+    height: 145px;
+}
+
+.blogWrap{
+    width: 1000px;
+    height: 320px;
+}

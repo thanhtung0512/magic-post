@@ -20,5 +20,10 @@ public class GatheringPoint {
     @Column(name = "Address", nullable = false)
     private String address;
 
+    @Column(name = "Latitude")
+    private double latitude;
     // Getters and setters
+
+    @Column(name = "Longitude")
+    private double longitude;
 }

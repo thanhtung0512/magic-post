@@ -9,6 +9,7 @@ import com.example.server.domain.Customer;
 import com.example.server.domain.DeliveryOrder;
 import com.example.server.domain.GatheringPoint;
 import com.example.server.domain.Goods;
+import com.example.server.domain.OrderMovement;
 import com.example.server.domain.PointLeaderAtGatheringPoint;
 import com.example.server.domain.PointLeaderAtTransactionPoint;
 import com.example.server.domain.Role;
@@ -17,9 +18,10 @@ import com.example.server.domain.Teller;
 import com.example.server.domain.TransactionPoint;
 import com.example.server.domain.TransactionPointGatheringPoint;
 import com.example.server.domain.User;
-
+import org.springframework.stereotype.Component;
 import jakarta.transaction.Transaction;
 
+@Component
 public class HibernateUtil {
 
     private static String currentDB = "bblipzsuaomfkih4bdzx";
@@ -88,7 +90,7 @@ public class HibernateUtil {
         return getSessionFactory(currentDB, port, user, pass, CompanyLeader.class, Customer.class, DeliveryOrder.class,
                 GatheringPoint.class, Goods.class, PointLeaderAtGatheringPoint.class,
                 PointLeaderAtTransactionPoint.class, Role.class, StaffAtGatheringPoint.class, Teller.class,
-                TransactionPoint.class, TransactionPointGatheringPoint.class, User.class);
+                TransactionPoint.class, TransactionPointGatheringPoint.class, OrderMovement.class, User.class);
     }
 
 }

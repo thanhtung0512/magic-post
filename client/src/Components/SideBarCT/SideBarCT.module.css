@@ -1,5 +1,5 @@
 .container{
-    background-color: teal;
+    background-color: #01904a;
     height: 100%;
     width: 100%;
     display: flex;
@@ -13,5 +13,9 @@
     font-size: 24px;
 }
 .arrow:hover{
-    color: teal;
+    color: #01904a;
+}
+
+.NavItem{
+    font-size: 25px;
 }

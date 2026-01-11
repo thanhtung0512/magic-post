@@ -42,15 +42,15 @@ const SideBar = ({ userRole, activeNavItem, onNavItemClick }) => {
         align="start"
         spacing={3}
         p={4}
-        paddingTop='60px'
-        borderRadius='8px'
+        paddingTop="60px"
+        borderRadius="8px"
         bg="teal"
         color="black"
         h="120vh"
         w={isLargerThanMD ? "270px" : "100%"}
         position="fixed"
-        top='80px'
-        left={isSidebarOpen ? '0px' : "-270px"}
+        top="80px"
+        left={isSidebarOpen ? "0px" : "-270px"}
         // left='0px'
 
         // top={20}
@@ -72,32 +72,33 @@ const SideBar = ({ userRole, activeNavItem, onNavItemClick }) => {
           bg="teal"
           position="absolute"
           // left="270px"
-          left={isSidebarOpen ? '0px':'270px'}
-          top='0px'
-          width='40px'
-          height='40px'
-          textAlign='center'
-          alignItems='center'
+          left={isSidebarOpen ? "0px" : "270px"}
+          top="0px"
+          width="40px"
+          height="40px"
+          textAlign="center"
+          alignItems="center"
           transition="left 0.3s ease-in-out"
           // borderRadius='50%'
           // backgroundColor= {isSidebarOpen ? 'teal':'white'}
           // _hover='none'
 
-
           // top={isSidebarOpen ? '20px':'0px'}
           // width='100px'
           // height='100px' "←"
         >
-          <Text fontSize={23} color={isSidebarOpen ? 'white':'white'} fontWeight="bold"
-          
+          <Text
+            fontSize={23}
+            color={isSidebarOpen ? "white" : "white"}
+            fontWeight="bold"
           >
-            {isSidebarOpen ? "←": "→"}
+            {isSidebarOpen ? "←" : "→"}
           </Text>
         </Button>
         {sidebarItems.map((item) => (
           <NavItem
             key={item.to}
-            top='30px'
+            top="30px"
             to={item.to}
             activeNavItem={activeNavItem}
             onClick={() => onNavItemClick(item.to, isSidebarOpen)}
@@ -111,8 +112,7 @@ const SideBar = ({ userRole, activeNavItem, onNavItemClick }) => {
   );
 };
 const NavItem = ({ to, children, activeNavItem, onClick, isLargerThanMD }) => (
-  <Link to={to} 
-  style={{ textDecoration: "none", color: "white" }}>
+  <Link to={to} style={{ textDecoration: "none", color: "white" }}>
     <Button
       w={isLargerThanMD ? "230px" : "100%"}
       textAlign="left"
@@ -132,6 +132,7 @@ const getSidebarItems = (userRole) => {
   const currentRole = currentUser.roles[0];
   console.log(currentRole);
   switch (currentRole) {
+    List<DeliveryOrder> findByStatus(String status);
     case "ROLE_BOSS":
       userRole = "companyLeader";
       break;
@@ -154,7 +155,7 @@ const getSidebarItems = (userRole) => {
       return [
         { to: "/dashboard", label: "Dashboard" },
         { to: "/manage-points", label: "Manage Points" },
-        { to: "/manage-account-managers", label: "Manage Account Managers" },
+        { to: "/manage-account-managers", label: "Manage Account" },
         { to: "/view-statistics", label: "View Statistics" },
         { to: "/profile", label: "Profile" },
       ];

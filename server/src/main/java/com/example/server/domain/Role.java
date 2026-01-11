@@ -7,6 +7,8 @@ import jakarta.persistence.*;
 @Entity
 @Data
 @Table(name = "Role")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Role {
 
     @Id

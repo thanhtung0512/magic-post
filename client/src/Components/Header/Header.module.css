@@ -47,9 +47,9 @@
   outline: none !important;
 } */
 
-.container{
+.container {
   width: 100%;
-  height:80px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   border-bottom: 3px solid teal;
@@ -59,17 +59,29 @@
   z-index: 1000;
   background-color: white;
 }
-.SearchBar{
+.SearchBar {
   width: 40%;
   height: 100%;
   align-items: center;
 }
+.company {
+  display: flex;
+  gap: 10px;
+  height: 100%;
+}
+.company span {
+  line-height: 80px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
-.userSet{
+.userSet {
   display: flex;
   gap: 10px;
   align-items: center;
 }
-.userName{
- font-size: 32px;
+.userName {
+  font-size: 32px;
 }

@@ -29,6 +29,7 @@ const Content = () => {
           isSideBarOpening={isSideBarOpen}
         />
       </div>
+      
     </div>
   );
 };
